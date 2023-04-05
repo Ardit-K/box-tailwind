@@ -1,0 +1,18 @@
+<div class="p-20">
+  <div class="name">
+    <h1 class="text-5xl">{{ movie?.Name }}</h1>
+  </div>
+  <div class="release">
+    <h6 class="text-xl ">Released: {{ movie?.Release }}</h6>
+  </div>
+  <div class="description">
+    <h4 class="font-bold">Description:</h4>
+    <h5>{{ movie?.Description }}</h5>
+  </div>
+  <div class="rating">
+    <h5>Rating: {{ movie?.Rating }}</h5>
+  </div>
+  <div class="back">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" routerLink="['/movies']">Back</button>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<h1 class="text-center text-blue-800 text-3xl">MOVIE LIST</h1>
+<div class="p-20">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" [routerLink]="['add-movie']">Add Movie</button>
+  <table class="table-fixed border bg-slate-100 w-full h-full">
+    <thead>
+      <tr class="bg-blue-100">
+        <th class="font-bold p-2 border-b text-left">Id</th>
+        <th class="font-bold p-2 border-b text-left">Movie-Name</th>
+        <th class="font-bold p-2 border-b text-left">Release-Date</th>
+        <th class="font-bold p-2 border-b text-left">Rating</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td class="font-bold p-2 border-b text-left">{{movie.id}}</td>
+        <td class="font-bold p-2 border-b text-left"><a [routerLink]="[movie.id]" class="hover:text-blue-600">{{movie.Name}}</a></td>
+        <td class="font-bold p-2 border-b text-left">{{movie.Release}}</td>
+        <td class="font-bold p-2 border-b text-left">{{movie.Rating}}</td>
+        <td>
+          <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" (click)="delete(movie)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

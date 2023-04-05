@@ -1,0 +1,2 @@
+This project was created using an NX monorepo. It contains a front end made with angular, and a back end made with node.js and express.js.
+Run the back end and the front end to launch application.

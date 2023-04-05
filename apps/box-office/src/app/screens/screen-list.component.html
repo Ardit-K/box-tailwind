@@ -1,0 +1,44 @@
+<h1 class="text-center text-green-800 text-3xl">SCREEN LIST</h1>
+<!-- <div class="p-20">
+    <table class="table-fixed border bg-green-100 w-full">
+      <thead>
+        <tr class="bg-green-200">
+          <th class="font-bold p-2 border-b text-left">Id</th>
+          <th class="font-bold p-2 border-b text-left">Movie-Name</th>
+          <th class="font-bold p-2 border-b text-left">Tickets Available</th>
+          <th class="font-bold p-2 border-b text-left">Total Tickets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let screen of screens">
+          <td class="font-bold p-2 border-b text-left">{{screen.id}}</td>
+          <td class="font-bold p-2 border-b text-left">{{screen.Movie.Name}}</td>
+          <td class="font-bold p-2 border-b text-left">{{screen.ticketsAvailable}}</td>
+          <td class="font-bold p-2 border-b text-left">{{screen.totalTickets}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   -->
+<div class="p-20">
+  <div>
+    <table class="table-fixed border bg-green-100 w-full h-full">
+      <thead>
+        <tr class="bg-green-400">
+          <th>Screen</th>
+          <th>Movie</th>
+          <th>Tickets Available</th>
+          <th>Total Seats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let screen of screens" class="bg-green-100">
+          <the-box-office-s-row
+            [screen]="screen"
+            (screenUpdated)="updateScreen($event)"
+          ></the-box-office-s-row>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

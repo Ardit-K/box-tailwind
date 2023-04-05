@@ -1,0 +1,54 @@
+<h1 class="text-center text-red-800 text-3xl">SALES PAGE</h1>
+<h2 class="font-bold text-xl">Choose a screening to purchase</h2>
+<div class="row">
+  <div>
+    <table class="table-fixed border bg-red-100 w-full h-full">
+      <thead>
+        <tr class=" bg-red-400">
+          <th>Screen</th>
+          <th>Movie</th>
+          <th>Tickets Available</th>
+          <th># of tickets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="clickable" *ngFor="let screen of screens">
+          <the-box-office-sale-row
+            *ngIf="screen.Movie"
+            s
+            [screen]="screen"
+            (screenToBeSwapped)="beginSwap($event)"
+            (pushSale)="getSales()"
+          ></the-box-office-sale-row>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- <div class="">
+    <table class="table-fixed border bg-slate-100 w-50% h-full"></table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Screen</th>
+        <th>Movie</th>
+        <th>Tickets</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of sales">
+        <td>{{ sale.saleId }}</td>
+        <td>{{ sale.screenId }}</td>
+        <td>{{ sale.movie.Name }}</td>
+        <td>{{ sale.tickets }}</td>
+        <td>{{ sale.saleType }}</td>
+      </tr>
+    </tbody>
+  </div> -->
+</div>
+<the-box-office-swap
+  *ngIf="swapMode"
+  [screen]="toBeSwappedScreen"
+  [availableScreens]="availableToBeSwapped"
+  (swapComplete)="performSwap($event)"
+></the-box-office-swap>

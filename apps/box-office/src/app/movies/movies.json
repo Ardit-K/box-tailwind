@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "Name": "Avatar",
+    "Release": "January 22, 2012",
+    "Description": "Blue Dudes do cool stuff.",
+    "Rating": 4.7
+  },
+  {
+    "id": "2",
+    "Name": "Spider-Man",
+    "Release": "February 10, 2008",
+    "Description": "Spider Dude gets powers.",
+    "Rating": 4.3
+  },
+  {
+    "id": "3",
+    "Name": "Venom",
+    "Release": "March 30, 2017",
+    "Description": "Eminem raps about a symbiote.",
+    "Rating": 4.0
+  },
+  {
+    "id": "4",
+    "Name": "Avengers",
+    "Release": "April 1, 2009",
+    "Description": "Heroes fight to save Earth",
+    "Rating": 5.0
+  },
+  {
+    "id": "5",
+    "Name": "Uncharted",
+    "Release": "July 19, 2012",
+    "Description": "Tom Holland tries to deceive us as a treasure hunter.",
+    "Rating": 3.9
+  }
+]

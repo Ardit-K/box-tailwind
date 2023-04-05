@@ -1,0 +1,22 @@
+<ng-container>
+  <td>{{ screen.id }}</td>
+  <td>
+    <p *ngIf="screen.Movie">{{ screen.Movie.Name }}</p>
+    <p *ngIf="!screen.Movie">No movie is playing...</p>
+  </td>
+  <td>{{ screen.ticketsAvailable }}</td>
+  <td>
+    <input
+      type="number"
+      min="0"
+      class="ticketInput col-2"
+      placeholder="tickets"
+      [(ngModel)]="tickets"
+    />
+  </td>
+  <td>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"(click)="buy()">Buy</button>
+    <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full" (click)="return()">Return</button>
+    <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full" (click)="swap()">Swap</button>
+  </td>
+</ng-container>

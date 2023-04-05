@@ -1,0 +1,10 @@
+<h3>Swapping from Screen: {{ screen.id }}</h3>
+<label for="screens">Screen: </label>
+<select name="screens" id="screens" [(ngModel)]="selectedScreen">
+  <option [ngValue]="screen" *ngFor="let screen of availableScreens">
+    {{ screen.id }}
+  </option>
+</select>
+<label for="tickets">Tickets: </label>
+<input type="number" name="tickets" id="tickets" [(ngModel)]="tickets" />
+<button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full" (click)="swap()">Save</button>

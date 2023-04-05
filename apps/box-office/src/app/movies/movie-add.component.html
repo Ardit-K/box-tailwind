@@ -1,0 +1,78 @@
+<h1>Adding a Movie</h1>
+<form (ngSubmit)="save()" [formGroup]="movieForm" class="w-full ">
+  <label for="Name">Movie Name</label>
+  <input
+    class="form-control"
+    id="Name"
+    type="text"
+    placeholder="Movie Name (required)"
+    formControlName="Name"
+    [ngClass]="{
+      'is-invalid':
+        (Name?.touched || Name?.dirty) &&
+        !Name?.valid
+    }"
+  />
+  <span class="invalid-feedback">
+    <span *ngIf="Name?.errors?.['required']">
+      Enter movie name.
+    </span>
+    <span *ngIf="Name?.errors?.['minlength']">
+      Name must be at least 3 characters.
+    </span>
+  </span>
+  <label for="Release">Release Date</label>
+  <input
+    class="form-control"
+    id="Release"
+    type="text"
+    placeholder="(required) month DD, YYYY"
+    formControlName="Release"
+    [ngClass]="{
+      'is-invalid':
+        (movieForm.get('Release')?.touched || movieForm.get('Release')?.dirty) &&
+        !movieForm.get('Release')?.valid
+    }"
+  />
+  <span class="invalid-feedback">
+    <span *ngIf="movieForm.get('Release')?.errors?.['required']">
+      Enter Release Date.
+    </span>
+  </span>
+  <label for="Desription">Description</label>
+  <input
+    class="form-control"
+    id="Description"
+    type="text"
+    formControlName="Description"
+  />
+  <label for="Rating">Rating</label>
+  <input
+    class="form-control"
+    id="Rating"
+    type="text"
+    placeholder="(required, 0 to 5, can be a decimal"
+    formControlName="Rating"
+    (ngClass)="
+      {
+        'is-invalid':
+          (movieForm.get('Rating')?.touched || movieForm.get('Rating')?.dirty) &&
+          !movieForm.get('Rating')?.valid
+      }
+    "
+  />
+  <span class="invalid-feedback">
+    <span *ngIf="movieForm.get('Rating')?.errors?.['required']">
+      Enter Rating.
+    </span>
+  </span>
+  <button
+    class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+    type="submit"
+    style="width: 80px"
+    [title]="movieForm.valid ? 'Save your data' : 'Disabled until valid'"
+    [disabled]="!movieForm.valid"
+  >
+    Save
+  </button>
+</form>

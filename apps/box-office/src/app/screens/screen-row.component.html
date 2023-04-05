@@ -1,0 +1,23 @@
+
+<ng-container *ngIf="!editing">
+    <td>{{ screen.id }}</td>
+    <td *ngIf="screen.Movie">
+      {{ screen.Movie.Name }}
+      <p *ngIf="!screen.Movie">No movie playing...</p>
+    </td>
+    <td>{{ screen.ticketsAvailable }}</td>
+    <td>{{ screen.totalTickets }}</td>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="edit()">Edit</button>
+  </ng-container >
+  <ng-container  *ngIf="editing">
+    <td>{{ screen.id }}</td>
+    <td>
+      <select name="movies" id="movies" [(ngModel)]="screen.Movie" >    
+        <option  [ngValue]="movie" *ngFor="let movie of movies">{{movie.Name}}</option>
+      </select>
+    </td>
+    <td><input type="text" [(ngModel)]="screen.ticketsAvailable" /></td>
+    <td><input type="text" [(ngModel)]="screen.totalTickets" /></td>
+    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" (click)="save(screen)">Save</button>
+  </ng-container >
+  
